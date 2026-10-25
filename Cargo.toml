@@ -2,5 +2,30 @@
 name = "simping"
 version = "0.1.0"
 edition = "2024"
+rust-version = "1.99.1"
 
 [dependencies]
+macro_rules_attribute = "0.2.3"
+
+log = "0.4.34"
+env_logger = "0.11.11"
+
+smol = "2.0.2"
+smol-macros = "0.1.1"
+async-signal = "0.2.14"
+
+netlink-bindings = { git = "https://github.com/Aytixel/netlink-bindings.git", branch = "feat/rt-nexthop", features = [
+    "rt-nexthop",
+] }
+netlink-socket2 = { git = "https://github.com/Aytixel/netlink-bindings.git", branch = "feat/rt-nexthop", features = [
+    "smol",
+] }
+nix = { version = "0.31.3", features = ["net"] }
+
+serde = { version = "1.0.229", features = ["derive"] }
+toml = "1.1.8"
+oxicode = { version = "0.2.6", features = ["serde"] }
+
+humantime-serde = "1.1.1"
+serde_valid = { version = "3.2.0", features = ["toml"] }
+serde_with = "3.24.0"

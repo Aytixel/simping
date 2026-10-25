@@ -1,0 +1,41 @@
+[[tests.lo]]
+ip = "169.254.0.1"
+dev = "lo"
+netns = "default"
+interval = "10ms"
+timeout = "5ms"
+down_retry = 3
+up_retry = 1
+
+[[tests.lo]]
+ip = "169.254.0.2"
+dev = "lo"
+netns = "default"
+interval = "1s"
+timeout = "50ms"
+down_retry = 1
+up_retry = 10
+
+[[tests.lo_1]]
+ip = "169.254.0.3"
+dev = "lo"
+netns = "default"
+interval = "1s"
+timeout = "50ms"
+down_retry = 1
+up_retry = 10
+
+[[nexthops.lo]]
+dev = "lo"
+netns = "default"
+gateway = "169.254.0.3"
+test = "lo_1"
+
+[[routes]]
+routes = ["169.254.0.4/31"]
+nexthop = "test:lo"
+
+[[routes]]
+routes = ["169.254.0.6/31 dev lo"]
+nexthop = "lo"
+test = "lo"

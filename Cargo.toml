@@ -20,7 +20,7 @@ netlink-bindings = { git = "https://github.com/Aytixel/netlink-bindings.git", br
 netlink-socket2 = { git = "https://github.com/Aytixel/netlink-bindings.git", branch = "feat/rt-nexthop", features = [
     "smol",
 ] }
-nix = { version = "0.31.3", features = ["net"] }
+nix = { version = "0.31.3", features = ["sched"] }
 
 serde = { version = "1.0.229", features = ["derive"] }
 toml = "1.1.8"

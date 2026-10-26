@@ -8,6 +8,7 @@ use smol_macros::main;
 use crate::config::Config;
 
 mod config;
+mod netns;
 
 const CONFIG_PATH: &str = "/etc/simping/config.toml";
 const RTM_PROTOCOL: u8 = 69;

@@ -14,6 +14,7 @@ smol = "2.0.2"
 smol-macros = "0.1.1"
 async-signal = "0.2.14"
 
+socket2 = { version = "0.6.5", features = ["all"] }
 netlink-bindings = { git = "https://github.com/Aytixel/netlink-bindings.git", branch = "feat/rt-nexthop", features = [
     "rt-nexthop",
 ] }

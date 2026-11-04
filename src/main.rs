@@ -9,9 +9,12 @@ use crate::config::Config;
 
 mod config;
 mod netns;
+mod pinger;
 
 const CONFIG_PATH: &str = "/etc/simping/config.toml";
-const RTM_PROTOCOL: u8 = 69;
+const DEFAULT_PROTOCOL: u8 = 69;
+const DEFAULT_TABLE: u32 = 254;
+const DEFAULT_PAYLOAD: &[u8] = b"simping";
 
 #[apply(main!)]
 async fn main() -> Result<(), Box<dyn Error>> {
